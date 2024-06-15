@@ -18,7 +18,6 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 - Since the filament project has been modified and is under development. Insert a user through the database.
 - Rename .env.example to .env and match the database name to yours and do ```php artisan migrate```.
 - Open the web app using the commands ```php artisan serve``` and ```npm run dev``` and paste the directory ```http://127.0.0.1:8000/admin```
-- Login through the Network Admin account and Admin account.
-- Username: NetworkAdmin   Password: password     
+- Login through the Network Admin account. Username: ```NetworkAdmin``` Password: ```password```
 
 
