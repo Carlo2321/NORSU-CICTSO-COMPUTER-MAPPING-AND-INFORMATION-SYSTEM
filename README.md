@@ -4,8 +4,7 @@ This system is a capstone project submitted and developed by Carlo Estaras, Boni
 
 The project is made using Laravel v.10x and Filament v3.0x. It is a computer mapping system, designed to show the graphical representation of each computer of the College of Arts and Sciences buidling of Negros Oriental State University Main Campus. To display the availability of each computer whether it is working or not working.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
+You can read the rest of the documentation of this project through this link: https://pdf.ac/2xdVmb
 ## Installing the Project
 
 - Clone or download project
