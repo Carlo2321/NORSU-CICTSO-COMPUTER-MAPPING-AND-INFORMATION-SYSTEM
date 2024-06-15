@@ -19,4 +19,4 @@ You can read the rest of the documentation of this project through this link: ht
 - Open the web app using the commands ```php artisan serve``` and ```npm run dev``` and paste the directory ```http://127.0.0.1:8000/admin```
 - Login through the Network Admin account. Username: ```NetworkAdmin``` Password: ```password```
 
-
+## Screenshots of the project
