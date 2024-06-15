@@ -1,0 +1,280 @@
+body {
+    background: rgb(814, 2111, 233);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    margin: 0;
+}
+
+.uiverse-container {
+    display: flex;
+    position: absolute;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.uiverse {
+    position: relative;
+    background: #ffffff;
+    color: #000;
+    padding: 15px;
+    margin: 20px;
+    border-radius: 10px;
+    width: 120px;
+    height: 50px;
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+
+
+.uiverse.working {
+    background-color: lightgreen;
+}
+
+.uiverse.not-working {
+    background-color: pink;
+}
+
+.tooltip {
+    position: absolute;
+    top: -110px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    transition: top 0.3s ease;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 999;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.tooltip::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+}
+
+.uiverse-container .draggable-wrapper:hover .tooltip {
+    top: -16vh;
+    opacity: 1;
+}
+
+
+.uiverse:hover .tooltip {
+    top: -110px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.uiverse:hover,
+.uiverse:hover .tooltip,
+.uiverse:hover .tooltip::before {
+    background: linear-gradient(320deg, rgb(233, 763, 466), rgb(223, 2459, 442));
+    color: black;
+}
+
+.legend {
+    color: black;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.legend p {
+    display: flex;
+    font-family: "Courier New", Courier, monospace;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.legend-color {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.legend-color.working {
+    background-color: #5cb85c;
+}
+
+.legend-color.not-working {
+    background-color: #d9534f;
+}
+
+.back-button {
+    position: absolute;
+    padding: 0.1em 0.25em;
+    width: 13em;
+    height: 4.2em;
+    bottom: 10px;
+    left: 10px;
+    background-color: #007bff;
+    border: 0.08em solid #fff;
+    border-radius: 0.3em;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.back-button span {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0.4em;
+    width: 8.25em;
+    height: 2.5em;
+    background-color: #007bff;
+    border-radius: 0.2em;
+    font-size: 1.5em;
+    color: #fff;
+    border: 0.08em solid #fff;
+    box-shadow: 0 0.4em 0.1em 0.019em #fff;
+}
+
+.back-button span:hover {
+        transition: all 0.5s;
+        transform: translate(0, 0.4em);
+        box-shadow: 0 0 0 0 #fff;
+}
+
+.back-button span:not(hover) {
+        transition: all 1s;
+}
+
+.exit-button {
+    position: absolute;
+    padding: 0.1em 0.25em;
+    width: 13em;
+    height: 4.2em;
+    bottom: 10px;
+    left: 23vh;
+    background-color: #d9534f;
+    border: 0.08em solid #fff;
+    border-radius: 0.3em;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.exit-button span {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0.4em;
+    width: 8.25em;
+    height: 2.5em;
+    background-color: #d9534f;
+    border-radius: 0.2em;
+    font-size: 1.5em;
+    color: #fff;
+    border: 0.08em solid #fff;
+    box-shadow: 0 0.4em 0.1em 0.019em #fff;
+}
+
+.exit-button span:hover {
+    ransition: all 0.5s;
+    transform: translate(0, 0.4em);
+    box-shadow: 0 0 0 0 #fff;
+}
+
+.exit-button span:not(hover) {
+    transition: all 1s;
+}
+
+.computer-counts {
+    position: absolute;
+    top: 80px;
+    right: 78px;
+    color: black;
+}
+
+.computer-counts p {
+    display: flex;
+    font-family: "Courier New", Courier, monospace;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.draggable-wrapper {
+    position: relative;
+}
+
+.draggable-box {
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    background-color: #f9f9f9;
+    cursor: move;
+}
+
+.drop-zone {
+    margin: 10px;
+    padding: 20px;
+    border: 2px dashed #ccc;
+    background-color: #f0f0f0;
+    min-height: 100px;
+}
+
+.savePositionsBtn {
+    position: absolute;
+    padding: 0.1em 0.25em;
+    width: 13em;
+    height: 4.2em;
+    bottom: 10px;
+    left: 86vh;
+    background-color: #5cb81e;
+    border: 0.08em solid #fff;
+    border-radius: 0.3em;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.savePositionsBtn span {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0.4em;
+    width: 8.25em;
+    height: 2.5em;
+    background-color: #5cb81e;
+    border-radius: 0.2em;
+    font-size: 1.5em;
+    color: #fff;
+    border: 0.08em solid #fff;
+    box-shadow: 0 0.4em 0.1em 0.019em #fff;
+}
+
+.savePositionsBtn span:hover {
+    transition: all 0.5s;
+    transform: translate(0, 0.4em);
+    box-shadow: 0 0 0 0 #fff;
+}
+
+.savePositionsBtn span:not(hover) {
+    transition: all 1s;
+}

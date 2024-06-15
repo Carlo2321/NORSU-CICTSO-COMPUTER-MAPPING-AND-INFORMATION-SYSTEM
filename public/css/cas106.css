@@ -1,0 +1,813 @@
+body {
+    background: rgb(814, 2111, 233);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    margin: 0;
+}
+.toolbar {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: rgb(814, 2111, 247);
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #ddd;
+    right: 0;
+}
+
+.toolbar-button {
+    appearance: none;
+    background-color: transparent;
+    border: 0.125em solid #1A1A1A;
+    border-radius: 0.9375em;
+    box-sizing: border-box;
+    color: #3B3B3B;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 11px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0.5em;  /* Keep the margin if needed */
+    min-height: 3.75em;
+    min-width: 0;
+    outline: none;
+    padding: 1em 2.3em;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+}
+
+.toolbar-button:disabled {
+    pointer-events: none;
+}
+.toolbar-button:hover {
+    color: #fff;
+    background-color: #3b4447;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+  }
+  .toolbar-button:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+/* Base styles for the exit button */
+.toolbar-button-exit {
+    appearance: none;
+    background-color: transparent;
+    border: 0.125em solid #1A1A1A;
+    border-radius: 0.9375em;
+    box-sizing: border-box;
+    color: #3B3B3B;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 11px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0.5em;  /* Keep the margin if needed */
+    min-height: 3.75em;
+    min-width: 0;
+    outline: none;
+    padding: 1em 2.3em;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+}
+
+.toolbar-button-exit:disabled {
+    pointer-events: none;
+}
+
+.toolbar-button-exit:hover {
+    color: #fff;
+    background-color: #ad5054;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+    /* Ensure the pseudo-element is visible on hover */
+}
+
+.toolbar-button-exit:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+/* Add an "X" on hover */
+.toolbar-button-exit:hover::before {
+    content: "X";
+    margin-right: 8px; /* Adjust space between "X" and text */
+    font-weight: bold;
+    color: #fff; /* Match the hover text color */
+}
+
+/* Base styles for the print button */
+.toolbar-button-print {
+    appearance: none;
+    background-color: transparent;
+    border: 0.125em solid #1A1A1A;
+    border-radius: 0.9375em;
+    box-sizing: border-box;
+    color: #3B3B3B;
+    cursor: pointer;
+    display: flex; /* Use flexbox to align icon and text */
+    align-items: center; /* Center icon and text vertically */
+    font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 11px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0.5em;  /* Keep the margin if needed */
+    min-height: 3.75em;
+    min-width: 0;
+    outline: none;
+    padding: 1em 2.3em;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+}
+
+.toolbar-button-print:disabled {
+    pointer-events: none;
+}
+
+.toolbar-button-print:hover {
+    color: #fff;
+    background-color: #1b49e0;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+
+.toolbar-button-print:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+.icon-printer {
+    display: none;
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+.toolbar-button-print:hover .icon-printer {
+    display: inline-block;
+}
+
+
+
+.toolbar-button-save {
+    appearance: none;
+    background-color: transparent;
+    border: 0.125em solid #1A1A1A;
+    border-radius: 0.9375em;
+    box-sizing: border-box;
+    color: #3B3B3B;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 11px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0.5em;
+    min-height: 3.75em;
+    min-width: 0;
+    outline: none;
+    padding: 1em 2.3em;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+}
+
+.toolbar-button-save:disabled {
+    pointer-events: none;
+}
+
+.toolbar-button-save:hover {
+    color: #fff;
+    background-color: #16ab34;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+
+.toolbar-button-save:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+.save-icon {
+    display: none;
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+.toolbar-button-save:hover .save-icon {
+    display: inline-block;
+}
+
+
+.toolbar-button-back {
+    appearance: none;
+    background-color: transparent;
+    border: 0.125em solid #1A1A1A;
+    border-radius: 0.9375em;
+    box-sizing: border-box;
+    color: #3B3B3B;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 11px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0.5em;
+    min-height: 3.75em;
+    min-width: 0;
+    outline: none;
+    padding: 1em 2.3em;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+}
+
+.toolbar-button-back:disabled {
+    pointer-events: none;
+}
+
+.toolbar-button-back:hover {
+    color: #fff;
+    background-color: #913c99;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+
+.toolbar-button-back:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+/* Add a left arrow on hover */
+.toolbar-button-back:hover::before {
+    content: "←";
+    margin-right: 8px; /* Adjust space between arrow and text */
+    font-weight: bold;
+    color: #fff; /* Match the hover text color */
+}
+ /* Base styles for the select all button */
+.toolbar-button {
+    appearance: none;
+    background-color: transparent;
+    border: 0.125em solid #1A1A1A;
+    border-radius: 0.9375em;
+    box-sizing: border-box;
+    color: #3B3B3B;
+    cursor: pointer;
+    display: flex; /* Use flexbox to align icon and text */
+    align-items: center; /* Center icon and text vertically */
+    font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 11px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0.5em;  /* Keep the margin if needed */
+    min-height: 3.75em;
+    min-width: 0;
+    outline: none;
+    padding: 1em 2.3em;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+}
+
+.toolbar-button:disabled {
+    pointer-events: none;
+}
+
+.toolbar-button:hover {
+    color: #fff;
+    background-color: #b37422;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+
+.toolbar-button:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+.select-all-icon {
+    display: none;
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+.toolbar-button:hover .select-all-icon {
+    display: inline-block;
+}
+
+.toolbar-button {
+    appearance: none;
+    background-color: transparent;
+    border: 0.125em solid #1A1A1A;
+    border-radius: 0.9375em;
+    box-sizing: border-box;
+    color: #3B3B3B;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 11px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0.5em;
+    min-height: 3.75em;
+    min-width: 0;
+    outline: none;
+    padding: 1em 2.3em;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+}
+
+.toolbar-button:disabled {
+    pointer-events: none;
+}
+
+.toolbar-button:hover {
+    color: #fff;
+    background-color: ##e3a95d;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+
+.toolbar-button:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+.deselect-all-icon {
+    display: none;
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+/* Show the icon on hover */
+.toolbar-button:hover .deselect-all-icon {
+    display: inline-block;
+}
+
+.uiverse-container {
+    display: flex;
+    position: absolute;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.uiverse {
+    position: relative;
+    background: #ffffff;
+    color: #000;
+    padding: 15px;
+    margin: 20px;
+    border-radius: 10px;
+    width: 100px;
+    height: 50px;
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.uiverse.working {
+    background-color: lightgreen;
+}
+
+.uiverse.not-working {
+    background-color: pink;
+}
+
+.tooltip {
+    position: absolute;
+    top: -110px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    transition: top 0.3s ease;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 999;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.tooltip::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+}
+
+.uiverse-container .draggable-wrapper:hover .tooltip {
+    top: -18vh;
+    opacity: 1;
+}
+.remarks {
+    background-color: #d63851;
+    color: white;
+    display: inline-block;
+    padding: 2px 4px;
+    border-radius: 3px;
+    margin-top: 5px;
+}
+.computerName {
+    background-color: #2893ad;
+    color: white;
+    display: inline-block;
+    padding: 2px 4px;
+    border-radius: 3px;
+    margin-top: 5px;
+}
+.macAddress {
+    background-color: #2893ad;
+    color: white;
+    display: inline-block;
+    padding: 2px 4px;
+    border-radius: 3px;
+    margin-top: 5px;
+}
+.ipAddress {
+    background-color: #2893ad;
+    color: white;
+    display: inline-block;
+    padding: 2px 4px;
+    border-radius: 3px;
+    margin-top: 5px;
+}
+.status-working {
+    background-color: #4fc46e;
+    color: white;
+    display: inline-block;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+.status-not-working {
+    background-color: #d63851;
+    color: white;
+    display: inline-block;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+.uiverse:hover .tooltip {
+    top: -110px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.uiverse:hover,
+.uiverse:hover .tooltip,
+.uiverse:hover .tooltip::before {
+    background: linear-gradient(320deg, rgb(233, 763, 466), rgb(223, 2459, 442));
+    color: black;
+}
+
+.legend {
+    color: black;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.legend p {
+    display: flex;
+    font-family: "Courier New", Courier, monospace;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.legend-color {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.legend-color.working {
+    background-color: #5cb85c;
+}
+
+.legend-color.not-working {
+    background-color: #d9534f;
+}
+
+.back-button {
+    position: absolute;
+    padding: 0.1em 0.25em;
+    width: 13em;
+    height: 4.2em;
+    bottom: 10px;
+    left: 10px;
+    background-color: #007bff;
+    border: 0.08em solid #fff;
+    border-radius: 0.3em;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.back-button span {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0.4em;
+    width: 8.25em;
+    height: 2.5em;
+    background-color: #007bff;
+    border-radius: 0.2em;
+    font-size: 1.5em;
+    color: #fff;
+    border: 0.08em solid #fff;
+    box-shadow: 0 0.4em 0.1em 0.019em #fff;
+}
+
+.back-button span:hover {
+    transition: all 0.5s;
+    transform: translate(0, 0.4em);
+    box-shadow: 0 0 0 0 #fff;
+}
+
+.back-button span:not(hover) {
+    transition: all 1s;
+}
+
+.exit-button {
+    position: absolute;
+    padding: 0.1em 0.25em;
+    width: 13em;
+    height: 4.2em;
+    bottom: 10px;
+    left: 23vh;
+    background-color: #d9534f;
+    border: 0.08em solid #fff;
+    border-radius: 0.3em;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.exit-button span {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0.4em;
+    width: 8.25em;
+    height: 2.5em;
+    background-color: #d9534f;
+    border-radius: 0.2em;
+    font-size: 1.5em;
+    color: #fff;
+    border: 0.08em solid #fff;
+    box-shadow: 0 0.4em 0.1em 0.019em #fff;
+}
+
+.exit-button span:hover {
+    transition: all 0.5s;
+    transform: translate(0, 0.4em);
+    box-shadow: 0 0 0 0 #fff;
+}
+
+.exit-button span:not(hover) {
+    transition: all 1s;
+}
+
+.computer-counts {
+    position: absolute;
+    top: 80px;
+    right: 78px;
+    color: black;
+}
+
+.computer-counts p {
+    display: flex;
+    font-family: "Courier New", Courier, monospace;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.draggable-wrapper {
+    position: absolute;
+}
+
+.draggable-box {
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    background-color: #f9f9f9;
+    cursor: move;
+}
+
+.drop-zone {
+    margin: 10px;
+    padding: 20px;
+    border: 2px dashed #ccc;
+    background-color: #f0f0f0;
+    min-height: 100px;
+}
+
+.savePositionsBtn {
+    position: absolute;
+    padding: 0.1em 0.25em;
+    width: 13em;
+    height: 4.2em;
+    bottom: 10px;
+    left: 86vh;
+    background-color: #5cb81e;
+    border: 0.08em solid #fff;
+    border-radius: 0.3em;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.savePositionsBtn span {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0.4em;
+    width: 8.25em;
+    height: 2.5em;
+    background-color: #5cb81e;
+    border-radius: 0.2em;
+    font-size: 1.5em;
+    color: #fff;
+    border: 0.08em solid #fff;
+    box-shadow: 0 0.4em 0.1em 0.019em #fff;
+}
+
+.savePositionsBtn span:hover {
+    transition: all 0.5s;
+    transform: translate(0, 0.4em);
+    box-shadow: 0 0 0 0 #fff;
+}
+
+.savePositionsBtn span:not(hover) {
+    transition: all 1s;
+}
+
+.print-button {
+    position: absolute;
+    padding: 0.1em 0.25em;
+    width: 13em;
+    height: 4.2em;
+    bottom: 10px;
+    left: 65vh;
+    background-color: #6c757d;
+    border: 0.08em solid #fff;
+    border-radius: 0.3em;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.print-button span {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0.4em;
+    width: 8.25em;
+    height: 2.5em;
+    background-color: #6c757d;
+    border-radius: 0.2em;
+    font-size: 1.5em;
+    color: #fff;
+    border: 0.08em solid #fff;
+    box-shadow: 0 0.4em 0.1em 0.019em #fff;
+}
+
+.print-button span:hover {
+    transition: all 0.5s;
+    transform: translate(0, 0.4em);
+    box-shadow: 0 0 0 0 #fff;
+}
+
+.print-button span:not(hover) {
+    transition: all 1s;
+}
+.computer-hostname {
+    display: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+.selected {
+    background-color: rgba(0, 0, 255, 0.3);
+}
+.selectButton {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    position: absolute;
+    cursor: pointer;
+    left: 140vh;
+    top: 90vh;
+}
+
+@media print {
+    body {
+        background: #fff;
+    }
+
+    .uiverse-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0;
+    }
+
+    .uiverse {
+        margin: 10px;
+        box-shadow: none;
+        border: 1px solid #000;
+        background-color: #fff;
+        padding: 10px;
+    }
+
+    .tooltip,
+    .legend,
+    .back-button,
+    .toolbar,
+    .exit-button,
+    .savePositionsBtn,
+    .print-button,
+    .computer-counts,
+    .computer-icon,
+    .selectButton,
+    .current-room {
+        display: none;
+    }
+
+    .computer-hostname {
+        display: block;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    footer,
+    body > div:last-child {
+        display: none !important;
+    }
+}

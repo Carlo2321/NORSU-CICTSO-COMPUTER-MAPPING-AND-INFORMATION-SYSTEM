@@ -1,0 +1,305 @@
+.uiverse-container {
+    flex-wrap: wrap;
+}
+
+/* .uiverse {
+    position: relative;
+    background: #ffffff;
+    color: #000;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+    width: 120px;
+    height: 50px;
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+} */
+
+.draggable-wrapper {
+    position: relative;
+    width: calc(21vh + 10%);
+    height: 10vh;
+}
+
+.back-button,
+.go-up,
+.exit-button {
+}
+
+.shadow, .front {
+}
+.exit-button {
+    position: absolute;
+    padding: 0.1em 0.25em;
+    width: 13em;
+    font-family: "Courier New", Courier, monospace;
+    height: 4.2em;
+    bottom: 9vh;
+    left: 6vh;
+    background-color: #d9534f;
+    border: 0.08em solid #fff;
+    border-radius: 0.3em;
+    font-size: 11px;
+    cursor: pointer;
+    }
+
+.exit-button span {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0.4em;
+    width: 8.25em;
+    height: 2.5em;
+    background-color: #d9534f;
+    border-radius: 0.2em;
+    font-size: 1.5em;
+    color: #fff;
+    border: 0.08em solid #fff;
+    box-shadow: 0 0.4em 0.1em 0.019em #fff;
+}
+
+.exit-button span:hover {
+    transition: all 0.5s;
+    transform: translate(0, 0.4em);
+    ox-shadow: 0 0 0 0 #fff;
+}
+
+.exit-button span:not(hover) {
+    transition: all 1s;
+}
+.go-up {
+    position: absolute;
+    border: none;
+    background: transparent;
+    padding: 0;
+    bottom: 32vh;
+    left: 140vh;
+    cursor: pointer;
+    outline-offset: 4px;
+    transition: filter 250ms;
+    font-family: "Courier New", Courier, monospace;
+
+    user-select: none;
+    touch-action: manipulation;
+    }
+
+    .shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: hsl(0deg 0% 0% / 0.25);
+    will-change: transform;
+    transform: translateY(2px);
+    transition: transform
+        600ms
+        cubic-bezier(.3, .7, .4, 1);
+    }
+
+    .edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: linear-gradient(
+        to left,
+        hsl(210deg 100% 16%) 0%,
+        hsl(210deg 100% 32%) 8%,
+        hsl(210deg 100% 32%) 92%,
+        hsl(210deg 100% 16%) 100%
+        );
+    }
+
+    .front {
+    display: block;
+    position: relative;
+    padding: 12px 27px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    color: white;
+    background: hsl(210deg 100% 47%);
+    will-change: transform;
+    transform: translateY(-4px);
+    transition: transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+    }
+
+    button:hover {
+        filter: brightness(110%);
+    }
+
+    button:hover .front {
+        transform: translateY(-6px);
+        transition: transform
+        250ms
+        cubic-bezier(.3, .7, .4, 1.5);
+    }
+
+    button:active .front {
+        transform: translateY(-2px);
+        transition: transform 34ms;
+    }
+
+    button:hover .shadow {
+        transform: translateY(4px);
+        transition: transform
+        250ms
+        cubic-bezier(.3, .7, .4, 1.5);
+    }
+
+    button:active .shadow {
+        transform: translateY(1px);
+        transition: transform 34ms;
+    }
+
+    button:focus:not(:focus-visible) {
+        outline: none;
+    }
+
+    .savePositionsBtn {
+        position: absolute;
+        padding: 0.1em 0.25em;
+        width: 13em;
+        height: 4.2em;
+        bottom: 8.8vh;
+        left: 29vh;
+        background-color: #5cb81e;
+        border: 0.08em solid #fff;
+        border-radius: 0.3em;
+        font-size: 12px;
+        cursor: pointer;
+    }
+
+    .savePositionsBtn span {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Courier New", Courier, monospace;
+        bottom: 0.4em;
+        width: 9.3em;
+        height: 2.9em;
+        background-color: #5cb81e;
+        border-radius: 0.2em;
+        font-size: 16px;
+        color: #fff;
+        border: 0.08em solid #fff;
+        box-shadow: 0 0.4em 0.1em 0.019em #fff;
+    }
+
+    .savePositionsBtn span:hover {
+        transition: all 0.5s;
+        transform: translate(0, 0.4em);
+        box-shadow: 0 0 0 0 #fff;
+    }
+
+    .savePositionsBtn span:not(hover) {
+        transition: all 1s;
+    }
+
+    .uiverse {
+        background-color: white;
+        color: black;
+        border-radius: 10em;
+        font-size: 17px;
+        font-weight: 600;
+        font-family: "Courier New", Courier, monospace;
+
+        padding: 1em 2em;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        border: 1px solid black;
+        box-shadow: 0 0 0 0 black;
+      }
+
+      .uiverse:hover {
+        transform: translateY(-4px) translateX(-2px);
+        box-shadow: 2px 5px 0 0 black;
+      };
+
+      .uiverse:active {
+        transform: translateY(2px) translateX(1px);
+        box-shadow: 0 0 0 0 black;
+      };
+      .tooltip-container {
+        position: relative;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-size: 17px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tooltip {
+        position: absolute;
+        top: -100%;
+        left: 10%;
+        background: #7debff;
+        transform: translateX(-50%);
+        padding: 0.3em 0.6em;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s;
+        color: black;
+        border-radius: 5px;
+        width: 11em;
+        height: 7vh;
+        text-align: center;
+        z-index: 1000;
+        white-space: nowrap;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tooltip::before {
+        position: absolute;
+        content: "";
+        height: 0.6em;
+        width: 0.6em;
+        bottom: -0.3em;
+        left: 50%;
+        transform: translateX(-50%) rotate(45deg);
+        background: #7debff;
+    }
+
+    .tooltip-container:hover .tooltip {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        animation: shake 500ms ease-in-out forwards;
+    }
+
+    @keyframes shake {
+        0% {
+            transform: rotate(2deg);
+        }
+        50% {
+            transform: rotate(-3deg);
+        }
+        70% {
+            transform: rotate(3deg);
+        }
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+
+    .draggable-wrapper {
+        position: relative;
+    }

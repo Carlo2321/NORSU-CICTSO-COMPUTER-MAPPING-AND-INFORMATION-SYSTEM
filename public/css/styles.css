@@ -1,0 +1,135 @@
+body {
+    background: rgb(210, 228, 255); /* Azure blue */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+
+.logo-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem; /* Space between the logo and buttons */
+}
+
+.norsulogo {
+    width: 400px;
+    opacity: 0.2;
+}
+
+.button-group {
+    position: absolute;
+    top: 50%; /* Adjust this value to control vertical positioning */
+    transform: translateY(-50%); /* Center the button vertically */
+    display: flex;
+    align-items: center;
+}
+
+.livewire-button {
+    padding: 1em 2em;
+    border: none;
+    width: 65vh;
+    border-radius: 5px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #2c9caf;
+    transition: all 1000ms;
+    font-size: 15px;
+    position: relative;
+    overflow: hidden;
+    outline: 2px solid #2c9caf;
+    margin-right: 1rem; /* Space between the building button and exclamation button */
+}
+
+.livewire-button:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+    outline: 2px solid #70bdca;
+    box-shadow: 4px 5px 17px -4px #268391;
+}
+
+.livewire-button::before {
+    content: "";
+    position: absolute;
+    left: -50px;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: #6088ed;
+    transform: skewX(45deg);
+    z-index: -1;
+    transition: width 1000ms;
+}
+
+.livewire-button:hover::before {
+    width: 250%;
+}
+
+.floor-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: -13rem;
+}
+
+.floor-button {
+    height: 50px;
+    width: 100px;
+    margin: 10px;
+    padding: 1em;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #2c9caf;
+    transition: all 1000ms;
+    font-size: 10px;
+    position: relative;
+    overflow: hidden;
+    outline: 2px solid #2c9caf;
+}
+
+.floor-button:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+    outline: 2px solid #70bdca;
+    box-shadow: 4px 5px 17px -4px #268391;
+}
+
+.floor-button::before {
+    content: "";
+    position: absolute;
+    left: -50px;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: #6088ed;
+    transform: skewX(45deg);
+    z-index: -1;
+    transition: width 1000ms;
+}
+
+.floor-button:hover::before {
+    width: 250%;
+}
+
+.exclamation-button {
+    background-color: orange;
+    color: #ffffff;
+    width: 3vh;
+    height: 5vh; /* Made it square for better alignment */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
