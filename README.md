@@ -20,3 +20,4 @@ You can read the rest of the documentation of this project through this link: ht
 - Login through the Network Admin account. Username: ```NetworkAdmin``` Password: ```password```
 
 ## Screenshots of the project
+![](images/loginpage.jpeg)
