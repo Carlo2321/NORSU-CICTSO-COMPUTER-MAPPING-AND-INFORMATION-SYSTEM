@@ -19,7 +19,7 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 - Rename .env.example to .env and match the database name to yours and do ```php artisan migrate```.
 - Open the web app using the commands ```php artisan serve``` and ```npm run dev``` and paste the directory ```http://127.0.0.1:8000/admin```
 - Login through the Network Admin account and Admin account.
-      Username: NetworkAdmin      Username: Admin 
-      Password: password          Password: 12345
+- Username: NetworkAdmin      Username: Admin 
+  Password: password          Password: 12345
 
 
