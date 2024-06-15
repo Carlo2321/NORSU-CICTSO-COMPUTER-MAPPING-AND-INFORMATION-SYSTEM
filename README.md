@@ -20,4 +20,34 @@ You can read the rest of the documentation of this project through this link: ht
 - Login through the Network Admin account. Username: ```NetworkAdmin``` Password: ```password```
 
 ## Screenshots of the project
+Login Page
+
 ![](public/images/loginPage.png)
+
+Network Admin Dashboard
+
+![](public/images/dash.png)
+
+Computer Table
+
+![](public/images/computerTable.png)
+
+Computer Creation
+
+![](public/images/computerCreate.png)
+
+Building Map
+
+![](public/images/casMap.png)
+
+Floor Map
+
+![](public/images/floorMap.png)
+
+Computer Mapping
+
+![](public/images/computerMap.png)
+
+
+
+
